@@ -28,21 +28,21 @@ public class MainController {
 		
 		List<Movie>bestMovies = getBestMovies();
 		
-		String strBestMovies = "";
+//		String strBestMovies = "";
+//		
+//		for(int x = 0; x < bestMovies.size();x++) {
+//			
+//			if(x>0) {
+//				strBestMovies+=", ";
+//			}
+//			
+//			strBestMovies += bestMovies.get(x).getTitle();
+//			
+//		}
+//		
+//		model.addAttribute("movies", strBestMovies);
 		
-		for(int x = 0; x < bestMovies.size();x++) {
-			
-			if(x>0) {
-				strBestMovies+=", ";
-			}
-			
-			strBestMovies += bestMovies.get(x).getTitle();
-			
-		}
-		
-		model.addAttribute("movies", strBestMovies);
-		
-//		model.addAttribute("movies", getBestMovies().toString());
+		model.addAttribute("movies", getBestMovies());
 		
 		return "MoviesPage";
 	}
@@ -50,7 +50,7 @@ public class MainController {
 	@GetMapping("/movie/{id}")
 	public String routeSingleMovie(Model model, @PathVariable int id) throws Exception {
 		
-		model.addAttribute("movie", getBestMovies(id).getTitle());
+		model.addAttribute("movie", getBestMovies(id));
 		
 		return "SingleMoviePage";
 	}
@@ -60,19 +60,19 @@ public class MainController {
 		
 		List<Song>bestSongs = getBestSongs();
 		
-		String strBestSongs ="" ;
-		for(int x = 0; x < bestSongs.size();x++) {
-			
-			if(x>0) {
-				strBestSongs+=", ";
-			}
-			
-			strBestSongs+=bestSongs.get(x).getTitle();
-			
-		}
-		
-		model.addAttribute("songs", strBestSongs);
-//		model.addAttribute("songs", getBestSongs().toString());
+//		String strBestSongs ="" ;
+//		for(int x = 0; x < bestSongs.size();x++) {
+//			
+//			if(x>0) {
+//				strBestSongs+=", ";
+//			}
+//			
+//			strBestSongs+=bestSongs.get(x).getTitle();
+//			
+//		}
+//		
+//		model.addAttribute("songs", strBestSongs);
+		model.addAttribute("songs", getBestSongs());
 		
 		return "SongsPage";
 	}
@@ -81,10 +81,12 @@ public class MainController {
 	@GetMapping("/song/{id}")
 	public String routeSingleSong(Model model, @PathVariable int id) throws Exception {
 		
-		model.addAttribute("songs", getBestSongs(id).getTitle());
+		model.addAttribute("song", getBestSongs(id));
 		
-		return "SongsPage";
+		return "SingleSongPage";
 	}
+	
+
 	
 	
 	
@@ -94,9 +96,13 @@ public class MainController {
 		
 		Movie movie1=new Movie(1,"Lorem");
 		Movie movie2=new Movie(2,"Ipsum");
+		Movie movie3=new Movie(3,"Dolor");
+		Movie movie4=new Movie(4,"Sit");
+
 		bestMovies.add(movie1);
 		bestMovies.add(movie2);
-		
+		bestMovies.add(movie3);
+		bestMovies.add(movie4);
 		return bestMovies;
 	}
 	
@@ -122,10 +128,15 @@ public class MainController {
 		
 		List<Song> bestSongs = new ArrayList<Song>();
 		
-		Song song1=new Song(1,"Dolor");
-		Song song2=new Song(2,"Sit");
+		Song song1=new Song(1,"Amet");
+		Song song2=new Song(2,"Persecutur");
+		Song song3=new Song(3,"Pippo");
+		Song song4=new Song(4,"Franco");
+
 		bestSongs.add(song1);
 		bestSongs.add(song2);
+		bestSongs.add(song3);
+		bestSongs.add(song4);
 		
 		return bestSongs;
 	}

@@ -1,28 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Best of the year</title>
+<head >
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+	<title>Best of the Year</title>
+
 </head>
-<body>
+
+<body  data-bs-theme="dark">
 	
-	<h1>
-		Best of the year by [[${dev}]]
-	</h1>
 	
-	<div>
+	<header>
+		
+		<div class="container border-1">
+			
+			<div class="row">
+				
+				<div class="col-3">
+					<h1>
+						best of the year logo
+					</h1>
+				</div>
+				
+				<div class="col-6">
+					
+					<div class="row h-100 justify-content-start align-items-center">
+						
+						<div class="col-3" th:insert="Frags :: button('/movie' , 'Movies')"></div>
+						
+						<div class="col-3" th:insert="Frags :: button('/song' , 'Songs')"></div>
+						
+					</div>
+			
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</header>
 	
-	<div>
-		<a href="/movie">
-			movies
-		</a>
-	</div>
+	<main>
+		
+		<div class="container">
+			
+			<h1 class="text-center">
+				Best of the year by [[${dev}]]
+			</h1>
+			
+			<img class="img-fluid border border-warning" alt="img" th:src="@{/img.png}" />
+			
+			<h4>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum,
+				 purus nec eleifend varius, nunc augue porta sapien, a sollicitudin felis metus id ex.
+				  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+				   Pellentesque vitae mattis dolor. Orci varius natoque penatibus et magnis dis parturient montes.
+			</h4>
+			
+		</div>
+		
+		
+	</main>
+		
 	
-	<div>
-		<a href="/song">
-			songs
-		</a>
-	</div>
-	</div>
+	
+	
+	<script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
