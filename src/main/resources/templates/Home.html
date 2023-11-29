@@ -11,35 +11,7 @@
 <body  data-bs-theme="dark">
 	
 	
-	<header>
-		
-		<div class="container border-1">
-			
-			<div class="row">
-				
-				<div class="col-3">
-					<h1>
-						best of the year logo
-					</h1>
-				</div>
-				
-				<div class="col-6">
-					
-					<div class="row h-100 justify-content-start align-items-center">
-						
-						<div class="col-3" th:insert="Frags :: button('/movie' , 'Movies')"></div>
-						
-						<div class="col-3" th:insert="Frags :: button('/song' , 'Songs')"></div>
-						
-					</div>
-			
-				</div>
-				
-			</div>
-			
-		</div>
-		
-	</header>
+	<th:block th:replace="Frags :: header()"></th:block>
 	
 	<main>
 		

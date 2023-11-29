@@ -6,15 +6,23 @@
 <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
 <title>[[${song.getTitle()}]]</title>
 </head>
-<body>
+<body data-bs-theme="dark">
 	
-	<h1>
-		Best of Song of the year is [[${song.getTitle()}]]
-	</h1>
+	<th:block th:replace="Frags :: header()"></th:block>
 	
-	<div>
-		
-	</div>
+	<main>
+		<div class="container text-center">
+
+			<h1>
+				Best of Song of the year is [[${song.getTitle()}]]
+			</h1>
+			
+			<div>
+				[[${song.getTitle()}]]
+			</div>
+			
+		</div>
+	</main>
 
 </body>
 </html>
