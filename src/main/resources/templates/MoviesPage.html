@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+	<link th:rel="stylesheet" th:href="@{/Css.css}"/>
+
 	<title>MoviesPage</title>
 </head>
 <body data-bs-theme="dark">
@@ -12,11 +14,11 @@
 	
 	<div class="container">
 		
-		<h1 class="text-center">
+		<h1 class="text-center my-4">
 			The Best of Movies of the year
 		</h1>
 		
-		<ul class="text-center border">
+		<ul class="text-center border my-4">
 			<li class="border-bottom" th:each="movie : ${movies}" >
 				
 				<div th:insert="Frags :: button('/movie/'+ ${movie.getId()} , ${movie.getTitle()})"></div>
@@ -25,7 +27,7 @@
 				
 		</ul>
 		
-		<div class="col-3" th:insert="Frags :: button('/' , 'home')"></div>
+		<div class="col-3 text-center m-auto" th:insert="Frags :: button('/' , 'home')"></div>
 		
 	</div>
 
